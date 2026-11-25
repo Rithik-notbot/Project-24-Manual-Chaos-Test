@@ -30,4 +30,12 @@ Simulate a controlled application service failure, observe the impact, restore t
 - Incident report documenting the test.
 
 ## Status
-Documentation prepared. Test execution and evidence pending an authorized test environment.
+
+- Nginx installed in local WSL Ubuntu.
+- Initial service availability verified.
+- Controlled service failure successfully simulated.
+- Service recovery successfully verified.
+- Final HTTP response verified (200 OK).
+- Incident report completed.
+- All three test evidence screenshots captured.
+- Test performed locally; no company or production infrastructure affected.

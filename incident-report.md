@@ -1,33 +1,32 @@
 # Incident Report — Project 24
 
 ## Incident Details
-
 - **Project:** Manual Chaos Test
 - **Incident type:** Web service interruption
-- **Environment:** Authorized test environment
+- **Environment:** Local WSL Ubuntu test environment
 - **Service:** Nginx
-- **Date:** To be recorded during execution
+- **Date:** 26 November 2026
 
 ## Objective
 Evaluate how a web service behaves when it becomes unavailable and verify that it can be restored successfully.
 
-## Test Procedure
+## Test Results
 
-| Stage | Action | Expected result |
+| Stage | Action | Actual Result |
 |---|---|---|
-| 1 | Check Nginx status | Service is active |
-| 2 | Request test webpage | HTTP response succeeds |
-| 3 | Stop Nginx | Service becomes inactive |
-| 4 | Request test webpage | Request fails |
-| 5 | Restart Nginx | Service becomes active |
-| 6 | Request test webpage | HTTP response succeeds |
+| 1 | Check Nginx status | Active (running) |
+| 2 | Request test webpage | HTTP 200 OK |
+| 3 | Stop Nginx | Service became inactive |
+| 4 | Request test webpage | Connection failed as expected |
+| 5 | Restart Nginx | Service became active |
+| 6 | Request test webpage | HTTP 200 OK |
 
 ## Results
-
-- Initial service status: Pending
-- Failure simulation: Pending
-- Recovery status: Pending
-- Final HTTP verification: Pending
+- Initial service status: Successful
+- Initial HTTP verification: Successful
+- Failure simulation: Successful
+- Service recovery: Successful
+- Final HTTP verification: Successful
 
 ## Recovery Procedure
 
@@ -38,7 +37,9 @@ curl -I http://localhost
 ```
 
 ## Observations
-To be completed after the authorized test.
+The Nginx service responded normally before the test. After stopping the service, HTTP requests failed as expected. Restarting Nginx restored the service, and the final HTTP request succeeded.
 
 ## Conclusion
-To be completed after successful execution and verification.
+The local chaos test was successfully completed. The controlled service interruption and recovery demonstrated that Nginx could be restored after an unexpected service outage.
+
+**Note:** This was a local WSL simulation. No AWS, company-managed, shared, or production infrastructure was affected.
